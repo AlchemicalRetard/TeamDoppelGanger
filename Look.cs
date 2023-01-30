@@ -3,7 +3,7 @@ using UnityEngine;
 public class Look : MonoBehaviour
 {
     
-    [SerializeField] LayerMask aimLayerMask;
+    [SerializeField] LayerMask aimLayerMask; //add ground layer
 
     void Start()
     {
