@@ -24,7 +24,7 @@ public class EnemySpawn: MonoBehaviour
    public IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy =Instantiate(enemy,new Vector3(Random.Range(-5f,0),.4f, Random.Range(-6f, 6)),Quaternion.identity);
+        GameObject newEnemy =Instantiate(enemy,new Vector3(Random.Range(-5f,0),.4f, Random.Range(-6f, 6)),Quaternion.identity);// hello hello chdck
         newEnemy.GetComponent<followEnemy>().target = playerPosition;
         StartCoroutine(spawnEnemy(interval, enemy));
     }
