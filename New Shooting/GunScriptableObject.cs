@@ -64,6 +64,10 @@ public class GunScriptableObject : ScriptableObject
                 ShootConfig.HitMask
             ))
             {
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    DestroyEnemy(hit.collider.gameObject);
+                }
                 ActiveMonoBehaviour.StartCoroutine(
                     PlayTrail(
                         ShootSystem.transform.position,
@@ -130,5 +134,10 @@ public class GunScriptableObject : ScriptableObject
         trail.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
         return trail;
+    }
+
+    private void DestroyEnemy(GameObject enemy)
+    {
+        Destroy(enemy);
     }
 }
